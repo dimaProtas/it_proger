@@ -40,13 +40,14 @@ class App extends React.Component {
 
     this.addUser = this.addUser.bind(this);
     this.deleteUser = this.deleteUser.bind(this);
+    this.editUser = this.editUser.bind(this);
   }
   render() {
     return (
       <div>
         <Header text='List users' />
         <main>
-          <Users users={this.state.users} deleteUser={this.deleteUser}  />
+          <Users users={this.state.users} deleteUser={this.deleteUser} editUser={this.editUser}  />
         </main>
         <aside>
           <AddUserForm addUser={this.addUser} />
@@ -65,6 +66,22 @@ class App extends React.Component {
   deleteUser(id) {
     const users = this.state.users.filter(user => user.id!== id);
     this.setState({users: [...users]})
+  }
+
+  // мой метод тоже работает
+  // editUser(user) {
+  //   const allUsers = this.state.users;
+  //   allUsers[user.id-1] = user;
+
+  //   this.setState({users: [...allUsers]})
+  // }
+
+  // Мтод из урока
+  editUser(user) {
+    const allUsers = this.state.users;
+    allUsers[user.id-1] = user;
+
+    this.setState({users: []}, () => this.setState({users: [...allUsers]}));
   }
 
 }
