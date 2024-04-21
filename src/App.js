@@ -2,39 +2,45 @@ import React from "react";
 import Header from "./companents/Header/Header";
 import Users from "./companents/Users/Users";
 import AddUserForm from "./companents/Users/AddUserForm/AddUserForm.jsx"
+import axios from "axios";
 
-
+const baseUrl = "https://reqres.in/api/users?page=1"
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    axios.get(baseUrl).then((response) => {
+      this.setState({users: response.data.data})
+    })
+
     this.state = {
         users: [
-            {
-                id: 1,
-                firstname: 'John',
-                lastname: 'Doe',
-                bio: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam natus explicabo sequi fuga mollitia animi consectetur quae nobis, ea dolor aliquam deserunt excepturi dicta alias veniam? Ipsa dolorem amet quos!',
-                age: 30,
-                isHappy: true,
-            },
-            {
-                id: 2,
-                firstname: 'Jane',
-                lastname: 'Doe',
-                bio: 'This is my bio',
-                age: 28,
-                isHappy: false,
-            },
-            {
-                id: 3,
-                firstname: 'Jim',
-                lastname: 'Chery',
-                bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti culpa quisquam voluptas autem architecto minus ut pariatur, assumenda libero in reiciendis iure distinctio repellat, obcaecati porro dolorum! Blanditiis, neque perspiciatis.',
-                age: 26,
-                isHappy: true,
+            // {
+            //     id: 1,
+            //     firstname: 'John',
+            //     lastname: 'Doe',
+            //     bio: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam natus explicabo sequi fuga mollitia animi consectetur quae nobis, ea dolor aliquam deserunt excepturi dicta alias veniam? Ipsa dolorem amet quos!',
+            //     age: 30,
+            //     isHappy: true,
+            // },
+            // {
+            //     id: 2,
+            //     firstname: 'Jane',
+            //     lastname: 'Doe',
+            //     bio: 'This is my bio',
+            //     age: 28,
+            //     isHappy: false,
+            // },
+            // {
+            //     id: 3,
+            //     firstname: 'Jim',
+            //     lastname: 'Chery',
+            //     bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti culpa quisquam voluptas autem architecto minus ut pariatur, assumenda libero in reiciendis iure distinctio repellat, obcaecati porro dolorum! Blanditiis, neque perspiciatis.',
+            //     age: 26,
+            //     isHappy: true,
             
-            }
+            // }
         ]
     }
 
