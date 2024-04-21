@@ -1,19 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap');
+
 * {
     margin: 0;
     padding: 0;
 }
 
 body {
-    background-color: #222;
+    background-color: #333;
     color: #fff;
+    font-family: "Montserrat", sans-serif;
+    /* font-family: "Pacifico", cursive; */
+    font-weight: 300;
 }
 
 .header {
-    background-color: #000;
-    padding: 20px;
+    background-color: #222;
+    padding: 25px 100px;
+    font-weight: 800;
 }
 
 
-img {
-    max-width: 800px;
+main {
+    margin: 50px 100px;
+    width: 50%;
+    float: left;
+}
+
+aside {
+    width: 20%;
+    margin-top: 50px;
+    margin-left: 5%;
+    float: left;
+}
+
+main .user {
+    margin-bottom: 50px;
+    background-color: #3e8fa0;
+    padding: 20px;
+}
+
+main .delete-icon {
+    float: right;
+    color: #134b57;
+    cursor: pointer;
+    font-size: 20px;
+    /* transform: scale(2); */
+    transition: transform 1s ease;
+}
+
+main .edit-icon {
+    float: right;
+    margin-right: 10px;
+    color: #165664;
+    cursor: pointer;
+    font-size: 20px;
+    /* transform: scale(2); */
+    transition: transform 1s ease;
+}
+
+main .delete-icon:hover,
+main .edit-icon:hover {
+    opacity: 0.5;
+    transform: scale(2);
+}
+
+aside form input:not([type='checkbox']), 
+aside form textarea, 
+aside form button {
+    width: 90%;
+    padding: 15px 5%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    margin-bottom: 10px;
+    border: 0;
+    background: #222;
+    color: #fff;
+    outline: none; /* Различная обводка */
+}
+
+aside form input[type='checkbox'] {
+    margin: 10px;
+}
+
+aside form button {
+    width: 100%;
+    cursor: pointer;
+    transition: transform 500ms ease;
+}
+
+aside form button:hover {
+    transform: scale(1.1);
 }
