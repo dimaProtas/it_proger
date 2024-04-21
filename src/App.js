@@ -13,6 +13,12 @@ class App extends React.Component {
     // Регестрация события для слвего метода, если пишешь в событии код то регестрировать его не нужно
     this.onClick = this.onClick.bind(this);
   }
+  
+  componentDidUpdate(prevProp) {
+    if (this.state.title !== 'Helllo World') {
+      console.log('Измененение состояния!!!!')
+    }
+  }
 
   render() {
     return (
